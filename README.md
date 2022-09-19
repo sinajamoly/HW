@@ -6,12 +6,22 @@
 
 - clone this repository
 - run `composer install` to install Laravel framework into you computer
-- run sail up to run this project on docker ENV (having installed docker is required)
+- run `cp .env.example .env`
+- run `php artisan key:generate`
+- run `./vendor/bin/sail up` to run this project on docker ENV (having installed docker is required)
 - use Postman Collection to test APIs
  
  
 ## Implementation
-- ### 
+
+### api/get_markdown
+this api accept 1 input, markdown(file in .md or .txt). it is converting the markdown 
+text to HTML format and return HTML text back to user
+
+### api/publish_markdown
+this api accept 3 arguments, name(file_name), markdown(file in .md or .txt) and theme, it is converting the markdown 
+text to HTML format and save it in the public/markdown
+this is will be accessible through `http://0.0.0.0/public/markdown/file_name.html`
 
 ## License
 
